@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: FlashSite Design
- * Description: Camada visual do FlashSite para edição controlada de Hero, Top Bar e Tema Visual.
+ * Description: Camada visual do Flash Site para edição controlada de Hero, Top Bar e Tema Visual.
  * Plugin URI: https://www.flashsite.pt
- * Version: 1.1.0
- * Author: FlashSite
+ * Version: 1.2.0
+ * Author: Flash Site
  * Text Domain: flashsite-design
  */
 if (!defined('ABSPATH')) exit;
 
-define('FLASHSITE_DESIGN_VERSION', '1.1.0');
+define('FLASHSITE_DESIGN_VERSION', '1.2.0');
 define('FLASHSITE_DESIGN_FILE', __FILE__);
 define('FLASHSITE_DESIGN_PATH', plugin_dir_path(__FILE__));
 define('FLASHSITE_DESIGN_URL', plugin_dir_url(__FILE__));

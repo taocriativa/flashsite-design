@@ -1,9 +1,9 @@
 {
     "name": "FlashSite Design",
-    "version": "1.1.0",
-    "download_url": "https://github.com/taocriativa/flashsite-design/releases/download/v1.1.0/flashsite-design-1.1.0.zip",
+    "version": "1.2.0",
+    "download_url": "https://github.com/taocriativa/flashsite-design/releases/download/v1.2.0/flashsite-design-1.2.0.zip",
     "tested": "6.7",
     "requires": "6.4",
     "requires_php": "8.1",
-    "changelog": "https://github.com/taocriativa/flashsite-design/blob/main/docs/CHANGELOG-1.1.0.md"
+    "changelog": "https://github.com/taocriativa/flashsite-design/blob/main/docs/CHANGELOG-1.2.0.md"
 }
