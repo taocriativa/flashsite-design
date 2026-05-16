@@ -1,0 +1,46 @@
+/* FlashSite Design 0.6.0
+   Hero structural fit:
+   - hero can stretch to the external container height
+   - alignment is resolved against the effective slide height
+   - content max-width is enforced explicitly
+   - visual effects remain opt-in only
+*/
+.fsd-hero{position:relative;overflow:visible;border-radius:0;background:transparent;width:100%;max-width:none;height:100%;min-height:inherit}
+.fsd-hero__slides{position:relative;width:100%;height:100%;min-height:inherit}
+.fsd-hero__slide{display:none;position:relative;overflow:hidden;border-top-left-radius:var(--fsd-radius-tl,16px);border-top-right-radius:var(--fsd-radius-tr,16px);border-bottom-right-radius:var(--fsd-radius-br,16px);border-bottom-left-radius:var(--fsd-radius-bl,16px);width:100%;max-width:100%;margin-left:auto;margin-right:auto;height:100%;min-height:inherit}
+.fsd-hero__slide.is-active{display:block}
+.fsd-hero__media{position:absolute;inset:0;z-index:1}
+.fsd-hero__image{position:absolute;inset:0;background-size:cover;background-position:center center;width:100%;height:100%}
+.fsd-hero__slide.zoom .fsd-hero__image{transform:scale(1)}
+.fsd-hero__slide.is-active.zoom .fsd-hero__image{animation:fsdZoom 5s linear forwards}
+@keyframes fsdZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+.fsd-hero__overlay{position:relative;z-index:2;display:flex;width:100%;height:100%;min-height:inherit;padding:0;background:transparent}
+.fsd-hero__align{display:flex;flex:1 1 auto;width:100%;height:100%;min-height:inherit;padding:22px;box-sizing:border-box}
+.fsd-hero__align.is-h-left{justify-content:flex-start;text-align:left}
+.fsd-hero__align.is-h-center{justify-content:center;text-align:center}
+.fsd-hero__align.is-h-right{justify-content:flex-end;text-align:right}
+.fsd-hero__align.is-v-top{align-items:flex-start}
+.fsd-hero__align.is-v-center{align-items:center}
+.fsd-hero__align.is-v-bottom{align-items:flex-end}
+.fsd-hero__content{display:flex;flex-direction:column;box-sizing:border-box;color:var(--fsd-text-color,#fff);font-family:var(--fsd-font-family,inherit);width:100%;max-width:var(--fsd-content-max,760px);border-top-left-radius:var(--fsd-radius-tl,16px);border-top-right-radius:var(--fsd-radius-tr,16px);border-bottom-right-radius:var(--fsd-radius-br,16px);border-bottom-left-radius:var(--fsd-radius-bl,16px);padding:var(--fsd-pad-top,36px) var(--fsd-pad-right,36px) var(--fsd-pad-bottom,36px) var(--fsd-pad-left,36px)}
+.fsd-hero__content.is-backdrop-none{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.fsd-hero__content.is-backdrop-solid{background:var(--fsd-backdrop,rgba(0,0,0,.45))}
+.fsd-hero__content.is-backdrop-blur{background:rgba(255,255,255,.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.fsd-hero__content.is-backdrop-gradient{background:linear-gradient(135deg,var(--fsd-backdrop,rgba(0,0,0,.55)),rgba(0,0,0,.15))}
+.fsd-hero__title{font-size:42px;line-height:1.05;margin:0 0 12px;text-align:inherit;color:inherit;font-family:inherit}
+.fsd-hero__subtitle{font-size:18px;max-width:none;width:100%;margin:0 0 18px;text-align:inherit;color:inherit;font-family:inherit}
+.fsd-hero__button{display:inline-block;background:var(--fsd-button-bg,var(--fsd-primary,#8224e3));color:var(--fsd-button-color,#fff);padding:12px 18px;border-radius:var(--fsd-button-radius,999px);text-decoration:none;font-weight:600;transition:background-color .2s ease,color .2s ease,transform .2s ease}.fsd-hero__button:hover{background:var(--fsd-button-hover-bg,var(--fsd-button-bg,var(--fsd-primary,#8224e3)));color:var(--fsd-button-hover-color,var(--fsd-button-color,#fff));transform:translateY(-1px)}
+.fsd-hero__align.is-h-center .fsd-hero__button{align-self:center}
+.fsd-hero__align.is-h-right .fsd-hero__button{align-self:flex-end}
+.fsd-hero__align.is-h-left .fsd-hero__button{align-self:flex-start}
+.fsd-hero__dots{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:4;display:flex;gap:8px}
+.fsd-hero__dot{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.55);padding:0;cursor:pointer}
+.fsd-hero__dot.is-active{background:#fff}
+@media (max-width:767px){.fsd-hero__title{font-size:32px}.fsd-hero__subtitle{font-size:16px}.fsd-hero__align{padding:16px}.fsd-hero__content{max-width:var(--fsd-content-max-mobile,100%);padding:var(--fsd-pad-top-mobile,24px) var(--fsd-pad-right-mobile,20px) var(--fsd-pad-bottom-mobile,24px) var(--fsd-pad-left-mobile,20px)}.fsd-hero__align.is-hm-left{justify-content:flex-start;text-align:left}.fsd-hero__align.is-hm-center{justify-content:center;text-align:center}.fsd-hero__align.is-hm-right{justify-content:flex-end;text-align:right}.fsd-hero__align.is-vm-top{align-items:flex-start}.fsd-hero__align.is-vm-center{align-items:center}.fsd-hero__align.is-vm-bottom{align-items:flex-end}.fsd-hero__align.is-hm-center .fsd-hero__button{align-self:center}.fsd-hero__align.is-hm-right .fsd-hero__button{align-self:flex-end}.fsd-hero__align.is-hm-left .fsd-hero__button{align-self:flex-start}}
+
+/* FlashSite Design 1.0.0 — modelos guiados */
+.fsd-hero__image{background-position:var(--fsd-bg-position,center center)}
+.fsd-hero__slide.is-layout-centered .fsd-hero__align{justify-content:center;text-align:center}.fsd-hero__slide.is-layout-centered .fsd-hero__button{align-self:center}
+.fsd-hero__slide.is-layout-split{background:#111827}.fsd-hero__slide.is-layout-split .fsd-hero__media{width:50%;left:auto;right:0}.fsd-hero__slide.is-layout-split.is-image-left .fsd-hero__media{left:0;right:auto}.fsd-hero__slide.is-layout-split .fsd-hero__overlay{width:50%;margin-right:auto;background:#111827}.fsd-hero__slide.is-layout-split.is-image-left .fsd-hero__overlay{margin-left:auto;margin-right:0}.fsd-hero__slide.is-layout-split .fsd-hero__align{padding:0}.fsd-hero__slide.is-layout-split .fsd-hero__content{max-width:min(var(--fsd-content-max,760px),100%);border-radius:0;background:transparent}.fsd-hero__slide.is-layout-split .fsd-hero__content.is-backdrop-solid,.fsd-hero__slide.is-layout-split .fsd-hero__content.is-backdrop-blur,.fsd-hero__slide.is-layout-split .fsd-hero__content.is-backdrop-gradient{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.fsd-hero__slide.is-readability-light .fsd-hero__content{color:#111827}.fsd-hero__slide.is-readability-light .fsd-hero__content.is-backdrop-solid{background:rgba(255,255,255,.78)}
+@media (max-width:767px){.fsd-hero__image{background-position:var(--fsd-bg-position-mobile,center center)}.fsd-hero__slide.is-layout-split .fsd-hero__media{inset:0 0 auto 0;width:auto;height:44%}.fsd-hero__slide.is-layout-split .fsd-hero__overlay,.fsd-hero__slide.is-layout-split.is-image-left .fsd-hero__overlay{width:100%;height:100%;margin:0;padding-top:44%;box-sizing:border-box;background:#111827}.fsd-hero__slide.is-layout-split .fsd-hero__content{max-width:100%}}
